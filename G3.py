@@ -37,13 +37,13 @@ class g3sensor():
 								if token2_hex == '4d':
 										if debug: print "get 4d"
 										return True
-						elif token2_hex == '00': # fixme
-								if debug: print "get 00"
-								token3 = self.serial.read()
-								token3_hex=token3.encode('hex')
-								if token3_hex == '4d':
-										if debug: print "get 4d"
-										return True
+								elif token2_hex == '00': # fixme
+										if debug: print "get 00"
+										token3 = self.serial.read()
+										token3_hex=token3.encode('hex')
+										if token3_hex == '4d':
+												if debug: print "get 4d"
+												return True
 		def vertify_data(self, data):
 				if debug: print data
 				n = 2
