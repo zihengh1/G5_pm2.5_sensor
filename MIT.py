@@ -74,7 +74,7 @@ def fun(RX, num):
     time.sleep(0.5)
     
     print("DATA: ",num)
-    for x in range(20):
+    for x in range(10):
         print("x:",x)
         (count, data) = pi.bb_serial_read(RX)
         if count:
@@ -88,7 +88,7 @@ def fun(RX, num):
             print("pmdata",pmdata)
             
             data_upload(pmdata,num)
-        time.sleep(0.5)
+        # time.sleep(0.5)
     print("close")
     pi.bb_serial_read_close(RX)
     pi.stop()
@@ -102,6 +102,8 @@ def main():
             for rx in RX:
                 fun(rx,num)
                 num = num + 1
+						time.sleep(60)
+						num = 1
 
     except KeyboardInterrupt:
 				print("close")
